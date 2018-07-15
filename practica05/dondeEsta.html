@@ -1,0 +1,99 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<title>Práctica 5.7. ¿Dónde está mi coche?</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		#id_mapa {
+			height: 400px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="id_mapa"></div>
+	<button id="recordar" class="btn btn-success">Recordar Posición</button>
+	<button id="borrar" class="btn btn-danger">Borrar Posición</button>
+	<script>
+		let options = {
+			enableHighAccuracy: true,
+			maximumAge: 0,
+		};
+
+		var marcador_coche;
+
+		function success(pos) {
+			var coche = L.icon({
+				iconUrl: 'https://png.icons8.com/color/1600/f1-race-car-top-veiw.png',
+				iconSize: [50, 40],
+				popupAnchor: [0, -25]
+			});
+
+			var persona = L.icon({
+				iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Bimetrical_icon_person.svg/2000px-Bimetrical_icon_person.svg.png',
+				iconSize: [30, 50],
+				popupAnchor: [0, -25]
+			});
+
+			let x = pos.coords;
+			$(document).ready(function() {
+				let latitud = x.latitude;
+				let longitud = x.longitude;
+
+				let zoom = 16;
+				let mi_mapa = L.map('id_mapa').setView([latitud, longitud], zoom);
+				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+				}).addTo(mi_mapa);
+
+				let posicion_actual = [latitud, longitud];
+				let mi_marcador = L.marker(posicion_actual, {
+					icon: persona
+				}).addTo(mi_mapa);
+				mi_marcador.bindPopup("Posicion Actual").openPopup();
+
+				let latitud_coche = localStorage.getItem("latitud");
+				let longitud_coche = localStorage.getItem("longitud");
+				if (latitud_coche != undefined && longitud_coche != undefined) {
+					let posicion_coche = [latitud_coche, longitud_coche];
+					marcador_coche = L.marker(posicion_coche, {
+						icon: coche
+					}).addTo(mi_mapa);
+					marcador_coche.bindPopup("Posicion coche").openPopup();
+				}
+
+				$("#recordar").click(function() {
+					let posicion_coche = [latitud, longitud];
+					localStorage.setItem('latitud', latitud);
+					localStorage.setItem('longitud', longitud);
+					marcador_coche = L.marker(posicion_coche, {
+						icon: coche
+					}).addTo(mi_mapa);
+					marcador_coche.bindPopup("Posicion coche").openPopup();
+				});
+
+				$("#borrar").click(function() {
+					localStorage.clear();
+					mi_mapa.removeLayer(marcador_coche);
+				});
+			});
+		}
+
+		function error(err) {
+			console.warn('ERROR(${err.code}): ${err.message}');
+		};
+
+		navigator.geolocation.getCurrentPosition(success, error, options);
+	</script>
+
+</body>
+
+</html>

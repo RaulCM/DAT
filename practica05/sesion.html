@@ -1,0 +1,50 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<title>Práctica 5.1. Web Storage. Geolocalización</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="sesion.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div id="mensaje">
+
+	</div>
+	<button id="borrar" class="btn">Borrar</button>
+	<script>
+		$(document).ready(function() {
+			firstVisit()
+			if (!localStorage.getItem("registrado")) {
+				getPosition()
+			} else {
+				let usuario = localStorage.getItem('nombreUsuario')
+				let latitud = localStorage.getItem("latitud")
+				let longitud = localStorage.getItem("longitud")
+				let precision = localStorage.getItem("precision")
+				let fecha = localStorage.getItem("fecha")
+				getPosition()
+				let latitudNueva = localStorage.getItem("latitud")
+				let longitudNueva = localStorage.getItem("longitud")
+				if ((latitud == latitudNueva) && (longitud == longitudNueva)) {
+					let mensaje = "Hola " + usuario + ". Tu última visita fue con fecha " + fecha + ", la misma ubicación que ahora (coordenadas " + latitud + ", " + longitud + " más menos " + precision + " metros)"
+					$('#mensaje').text(mensaje)
+				} else {
+					let mensaje = "Hola " + usuario + ". Tu última visita fue con fecha " + fecha + ", desde las coordenadas " + latitud + ", " + longitud + " (más menos " + precision + " metros)"
+					$('#mensaje').text(mensaje)
+				}
+			}
+			$("#borrar").click(function() {
+				localStorage.clear()
+				location.reload()
+			});
+		});
+	</script>
+</body>
+
+</html>

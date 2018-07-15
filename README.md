@@ -276,4 +276,55 @@ Modifícalo para que, en caso problemas con los parámetros de entrada:\
 
 Haz una copia de tu práctica /practica03/calculadora.js con el nombre /practica04/ccalculadora.js (ccalculadora, con dos letras c). Modifícalo para emplear programación orientada a objetos basada en clases: define una clase Calculadora, usa objetos que instancien la clase, para tener la misma funcionalidad que en la práctica anterior.
 
+## Práctica 05
+### Práctica 5.1. Web Storage. Geolocalización
+
+En esta práctica probarás el uso básico de los API de Web Storage y Gelocalización. Escribe los ficheros ~/dat/practica05/sesion.html y ~/dat/practica05/sesion.js acordes con la siguiente especificación:
+La primera vez que se cargue el html preguntará al usuario su nombre, empleando un prompt, no un formulario.\
+A continuación, la página mostrará un texto similar al siguiente, según corresponda:
+Hola Juan. Esta es tu primera visita. Tus coordenadas son: 40.246, -3.825 (más menos 649 metros)\
+Hola Juan. Tu última visita fue con fecha 2018-04-10T19:08:57+02:00, desde las coordenadas 40.246, -3.825 (más menos 649 metros).\
+Hola Juan. Tu última visita fue con fecha 2018-04-10T19:08:57+02:00, desde las misma ubicación que ahora (coordenadas 40.246, -3.825, más menos 649 metros)
+Estos mensajes los debes componer en el HTML empleando jQuery (no una ventana alert). La información que debe aparecer es la del ejemplo, aunque tienes libertad para cambiar la redacción, el aspecto, la disposición, etc. Por ejemplo en vez de presentar la información redactada puedes usar tablas o cualquier otro elemento HTML.\
+En la página habrá un botón que permita borrar toda la información registrada.\
+En ejercicios anteriores, la lógica de negocio la programabas en Node.js, probabas la aplicación y luego la usabas desde HTML. En este ejemplo eso sería complicado, porque tanto WebStorage como Geolocalization son APIs del navegador. Así que programa directamente para el navegador. Eso sí: no insertes la funcionalidad directamente en el manejador del botón, del párrafo, etc. Programa funciones, y llámalas desde los manejadores.
+
+### Práctica 5.2. JSON
+
+Prepara un script en node.js con el nombre /practica05/json.js. Define un objeto literal con al menos 8 propiedades, probando todos los tipos de valor de JSON.\
+Convierte el objeto en cadena. Convierte la cadena de nuevo en objeto.
+### Práctica 5.3. JSON y LocalStorage
+
+En el ejercicio 5.1 usabas LocalStorage para guardar varias variables. Ahora modificarás ligeramente tu práctica para guardar un único objeto JSON.\
+Una vez que hayas acabado la práctica 5.1, prepara los ficheros /practica05/sesion2.html y /practica05/sesion2.js. Inicialmente serán iguales a los ficheros de la práctica anterior.\
+Modifícalos para almacenar en LocalStorage un único objeto JSON.1, no varias variables.
+### Práctica 5.4. Consulta REST a weatherunlocked
+
+Crea una cuenta gratuita en weatherunlocked. Escribe un programa en JavaScript para Node.js con el nombre /practica05/rest.js de acuerdo a la siguiente especificación:
+Tendrá una función llamada prediccion, que recibirá dos parámetros: latitud y longitud.\
+Devolverá una cadena de texto con la predicción meteorológica ofrecida por weatherunlocked para esa ubicación.\
+La cadena estará preparada para imprimirse directamente en pantalla de forma que tenga buen aspecto. Esto es, estructurada para que resulte claramente legible para una persona, con la información separada por líneas, organizada por columnas, sin comillas, comas, corchetes, etc.\
+La información se presentará en español, en las unidades habituales en España: temperatura en grados centígrados, precipitaciones en milímetros, etc.\
+En el programa habrá otra función que pruebe una o más veces la función prediccion, esto es, que la invoque pasándole unas coordenas y que muestre en consola la cadena obtenida.
+
+### Práctica 5.5. YouTube
+
+Añade dos o tres vídeos de YouTube a la página que preparaste en el ejercicio 2.15. Modifica el fichero de la práctica 2, déjalo con el mismo nombre en el mismo sitio.
+### Práctica 5.6. Geolocalización y mapas
+
+Escribe una página con el nombre ~/dat/practica05/posicion.html que presente un mapa de OpenStreetMaps con la posición actual del usuario.
+### Práctica 5.7. ¿Dónde está mi coche?
+
+Escribe una página /practica05/dondeEsta.html con la funcionalidad típica de las aplicaciones del tipo Where is my car?\
+Esto es, servirá para que el usuario pueda registrar dónde aparcó su coche.\
+La página tendrá especial utilidad funcionando en un teléfono móvil. Pero gracias a que HTML es una norma universal, puedes desarrollarlo en un ordenador de escritorio o portátil y probarlo luego en el móvil.\
+Toda la información se almacenará usando Web Storage.\
+La página mostrará sobre un mapa:
+\La posición actual del usuario.
+\Si está almacenada, la posición del coche.
+\La página tendrá dos botones.
+\Recordar posición.
+\Al pulsarlo, la posición almacenada será la posición actual.
+\Borrar posición.
+\Al pulsarlo, se borrará la posición almacenada. Si no hay ninguna, el botón estará deshabilitado.
 
