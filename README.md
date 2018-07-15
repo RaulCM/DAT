@@ -232,5 +232,48 @@ Usa una función javascript para cada estado
 
 Muchos lenguajes de programación tienen una función llamada sleep(x), que acepta un número de segundos y que detiene la ejecución del programa duante ese tiempo. O más bien, hace nada durante ese tiempo. El número puede tener decimales, pero si es negativo o no válido, la función mostrará un error en la consola.\
 JavaScript no tiene esta función. Prográmala, en el fichero. /practica03/sleep.js
-
 Sugerencia: usa un bucle.
+
+## Practica 04
+### Práctica 4.1. Mostrar y ocultar controles
+
+En este ejercicio vas a practicas el mostrar y ocultar controles usando jQuery\
+Escribe un fichero /practica04/ocultar.html que contenga:
+*Elige una de tus prácticas con HTML, desde la 2.8 hasta la 2.13, ambas inclusive.
+*Añádele algún botón, control o panel si lo crees necesario.
+*Añade botones (entre uno y tres) para que el usuario pueda mostrar u ocultar distintas partes del interfaz de usuario. Puedes organizarlo por complejidad (p.e. modo simplificado, modo normal, modo avanzado). También puedes organizarlo por funcionalidad, esto es, mostrar u ocultar los controles que se ocupen de tareas que estén relacionadas.
+
+### Práctica 4.2. Escritura y lectura de datos HTML-jQuery
+
+Escribe un fichero /practica04/unidades.html que, basado en jQuery, sea el interfaz de usuario del programa que escribiste en la práctica 3.2.\
+La velocidad de entrada se supone que la indicará el servidor, por tanto, será un valor escrito en el HTML, tu programa no podrá modificarlo. Para tus pruebas, cambia este valor a mano.\
+Cumpliendo lo anteriormente indicado, tienes libertad para organizar el HTML como prefieras.
+### Práctica 4.3. Modificación de un botón
+
+Escribe un fichero /practica04/cambiaBoton.html que, partiendo del ejemplo toggle.html, cambie el texto del botón, para que muestre ver foto u ocultar foto, según corresponda
+### Práctica 4.4. Tooltip
+
+Añade al menos 3 tooltips a alguno de los ejercicios de esta práctica.
+### Práctica 4.5. Validación de formulario
+
+Escribe un fichero /practica04/validacion.html que, mediante jQuery, use el programa que escribiste en la práctica 3.3.\
+El formulario deberá validarse continuamente, sin necesidad de que el usuario envíe la página o mueva el foco del elemento input.\
+Añade un campo llamado repite la contraseña (o similar), y valida que las dos contraseñas sean iguales. Como esta comprobación es muy básica, hazla directamente en el HTML, no hace falta llevar la lógica de negocio a un fichero JavaScript.
+### Práctica 4.6. Calculadora
+
+Escribe un fichero /practica04/calculadora.html que, basado en jQuery, sea el interfaz de usuario del programa que escribiste en la práctica 3.4.
+### Práctica 4.7. Calculadoras
+
+Escribe un fichero /practica04/calculadoras.html que use el programa que escribiste en la práctica 3.4, pero con dos calculadoras en el HTML. (Esto es para verificar que no empleabas ninguna variable global)
+### Práctica 4.8. Excepciones
+
+Copia tu práctica /practica03/js02.js en un fichero con el nombre /practica04/js04.js\
+Modifícalo para que, en caso problemas con los parámetros de entrada:\
+*La función que calcula la velocidad, genere las excepciones que corresponda. Usando objetos.
+*La función que llama a esta función, capture la excepciones y muestre un mensaje de error.
+
+### Práctica 4.9. Calculadora basada en clases
+
+Haz una copia de tu práctica /practica03/calculadora.js con el nombre /practica04/ccalculadora.js (ccalculadora, con dos letras c). Modifícalo para emplear programación orientada a objetos basada en clases: define una clase Calculadora, usa objetos que instancien la clase, para tener la misma funcionalidad que en la práctica anterior.
+
+

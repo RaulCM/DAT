@@ -1,0 +1,36 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<title>Práctica 4.2. Escritura y lectura de datos HTML-jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/js01.js"></script>
+</head>
+
+<body>
+	<span id="v_in">20</span> m/s <br>
+	<span id="v_out"></span>
+	<br>
+	<button id="boton01">km/h</button>
+	<button id="boton02">mph</button>
+	<script>
+		$(document).ready(function() {
+			$("#boton01").click(function() {
+				let v_text = $("#v_in").text();
+				let v_out = tokmh(v_text) + " km/h";
+				$("#v_out").text(v_out);
+			});
+
+			$("#boton02").click(function() {
+				let v_text = $("#v_in").text();
+				let v_out = tomph(v_text) + " mph";
+				$("#v_out").text(v_out);
+			});
+		});
+	</script>
+</body>
+
+</html>

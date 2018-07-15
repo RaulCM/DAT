@@ -1,0 +1,110 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<title>Práctica 4.7. Calculadoras</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/calculadora.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		#c1 {
+			float: left;
+		}
+
+		#c2 {
+			float: left;
+			margin-left: 35px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container-fluid" id="c1">
+		<span id="answer">0</span>
+		<div class="row">
+			<button class="btn col-xs-3 calc1" id="7" style="width:50px; height:50px;">7</button>
+			<button class="btn col-xs-3 calc1" id="8" style="width:50px; height:50px;">8</button>
+			<button class="btn col-xs-3 calc1" id="9" style="width:50px; height:50px;">9</button>
+			<button class="btn btn-warning col-xs-3 calc1" id="product" style="width:50px; height:50px;">*</button>
+		</div>
+		<div class="row">
+			<button class="btn col-xs-3 calc1" id="4" style="width:50px; height:50px;">4</button>
+			<button class="btn col-xs-3 calc1" id="5" style="width:50px; height:50px;">5</button>
+			<button class="btn col-xs-3 calc1" id="6" style="width:50px; height:50px;">6</button>
+			<button class="btn btn-warning col-xs-3 calc1" id="substract" style="width:50px; height:50px;">-</button>
+		</div>
+		<div class="row">
+			<button class="btn col-xs-3 calc1" id="1" style="width:50px; height:50px;">1</button>
+			<button class="btn col-xs-3 calc1" id="2" style="width:50px; height:50px;">2</button>
+			<button class="btn col-xs-3 calc1" id="3" style="width:50px; height:50px;">3</button>
+			<button class="btn btn-warning col-xs-3 calc1" id="plus" style="width:50px; height:50px;">+</button>
+		</div>
+		<div class="row">
+			<button class="btn btn-danger col-xs-3 calc1" id="reset" style="width:50px; height:50px;">c</button>
+			<button class="btn col-xs-3 calc1" id="0" style="width:50px; height:50px;">0</button>
+			<button class="btn btn-success col-xs-3 calc1" id="igual" style="width:50px; height:50px;">=</button>
+			<button class="btn btn-warning col-xs-3 calc1" id="divide" style="width:50px; height:50px;">/</button>
+		</div>
+	</div>
+	<div class="container-fluid" id="c2">
+		<span id="answer2">0</span>
+		<div class="row">
+			<button class="btn col-xs-3 calc2" id="7" style="width:50px; height:50px;">7</button>
+			<button class="btn col-xs-3 calc2" id="8" style="width:50px; height:50px;">8</button>
+			<button class="btn col-xs-3 calc2" id="9" style="width:50px; height:50px;">9</button>
+			<button class="btn btn-warning col-xs-3 calc2" id="product" style="width:50px; height:50px;">*</button>
+		</div>
+		<div class="row">
+			<button class="btn col-xs-3 calc2" id="4" style="width:50px; height:50px;">4</button>
+			<button class="btn col-xs-3 calc2" id="5" style="width:50px; height:50px;">5</button>
+			<button class="btn col-xs-3 calc2" id="6" style="width:50px; height:50px;">6</button>
+			<button class="btn btn-warning col-xs-3 calc2" id="substract" style="width:50px; height:50px;">-</button>
+		</div>
+		<div class="row">
+			<button class="btn col-xs-3 calc2" id="1" style="width:50px; height:50px;">1</button>
+			<button class="btn col-xs-3 calc2" id="2" style="width:50px; height:50px;">2</button>
+			<button class="btn col-xs-3 calc2" id="3" style="width:50px; height:50px;">3</button>
+			<button class="btn btn-warning col-xs-3 calc2" id="plus" style="width:50px; height:50px;">+</button>
+		</div>
+		<div class="row">
+			<button class="btn btn-danger col-xs-3 calc2" id="reset" style="width:50px; height:50px;">c</button>
+			<button class="btn col-xs-3 calc2" id="0" style="width:50px; height:50px;">0</button>
+			<button class="btn btn-success col-xs-3 calc2" id="igual" style="width:50px; height:50px;">=</button>
+			<button class="btn btn-warning col-xs-3 calc2" id="divide" style="width:50px; height:50px;">/</button>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			let calc = {
+				op1: null,
+				op2: null,
+				operator: null,
+				state: 0
+			};
+			$(".calc1").click(function() {
+				let v_in = $(this).text();
+				let v_out = getKey(v_in, calc);
+				console.log(v_out);
+				$("#answer").text(v_out);
+			});
+			let calc2 = {
+				op1: null,
+				op2: null,
+				operator: null,
+				state: 0
+			};
+			$(".calc2").click(function() {
+				let v_in = $(this).text();
+				let v_out = getKey(v_in, calc2);
+				console.log(v_out);
+				$("#answer2").text(v_out);
+			});
+		});
+	</script>
+</body>
+
+</html>

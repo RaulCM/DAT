@@ -1,0 +1,61 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<title>Práctica 4.6. Calculadora</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/calculadora.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<span id="answer">0</span>
+		<div class="row">
+			<button class="btn col-xs-3" id="7" style="width:50px; height:50px;">7</button>
+			<button class="btn col-xs-3" id="8" style="width:50px; height:50px;">8</button>
+			<button class="btn col-xs-3" id="9" style="width:50px; height:50px;">9</button>
+			<button class="btn btn-warning col-xs-3" id="product" style="width:50px; height:50px;" data-toggle="tooltip" title="Multiplicar" data-placement="right">*</button>
+		</div>
+		<div class="row">
+			<button class="btn col-xs-3" id="4" style="width:50px; height:50px;">4</button>
+			<button class="btn col-xs-3" id="5" style="width:50px; height:50px;">5</button>
+			<button class="btn col-xs-3" id="6" style="width:50px; height:50px;">6</button>
+			<button class="btn btn-warning col-xs-3" id="substract" style="width:50px; height:50px;" data-toggle="tooltip" title="Restar" data-placement="right">-</button>
+		</div>
+		<div class="row">
+			<button class="btn col-xs-3" id="3" style="width:50px; height:50px;">3</button>
+			<button class="btn col-xs-3" id="2" style="width:50px; height:50px;">2</button>
+			<button class="btn col-xs-3" id="1" style="width:50px; height:50px;">1</button>
+			<button class="btn btn-warning col-xs-3" id="plus" style="width:50px; height:50px;" data-toggle="tooltip" title="Sumar" data-placement="right">+</button>
+		</div>
+		<div class="row">
+			<button class="btn btn-danger col-xs-3" id="reset" style="width:50px; height:50px;" data-toggle="tooltip" title="Reset" data-placement="bottom">c</button>
+			<button class="btn col-xs-3" id="0" style="width:50px; height:50px;">0</button>
+			<button class="btn btn-success col-xs-3" id="igual" style="width:50px; height:50px;" data-toggle="tooltip" title="Calcular" data-placement="bottom">=</button>
+			<button class="btn btn-warning col-xs-3" id="divide" style="width:50px; height:50px;" data-toggle="tooltip" title="Dividir" data-placement="right">/</button>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			let calc = {
+				op1: null,
+				op2: null,
+				operator: null,
+				state: 0
+			};
+			$(".btn").click(function() {
+				let v_in = $(this).text();
+				let v_out = getKey(v_in, calc);
+				console.log(v_out);
+				$("#answer").text(v_out);
+			});
+		});
+	</script>
+</body>
+
+</html>

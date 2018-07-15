@@ -1,0 +1,46 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<title>Práctica 4.5. Validación de formulario</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/js03.js"></script>
+</head>
+
+<body>
+	<form action="/action_page.html">
+		<label for="password">Introduzca la contraseña:</label>
+		<br>
+		<input type="password" name="contrasena" id="contrasena">
+		<div id="validacion1"></div>
+		<label for="contrasena2">Vuelva a introducir la contraseña:</label>
+		<br>
+		<input type="password" name="contrasena2" id="contrasena2">
+		<div id="validacion2"></div>
+		<br>
+		<input type="submit">
+	</form>
+	<script>
+		$(document).ready(function() {
+			$("#contrasena").on("change keyup paste mouseup", function() {
+				if (validate($("#contrasena").val(), length = 3, nMinus = 1, nCaps = 1, nNumbers = 2, nSpecial = 2, specials = ',.-{}[]!"·$%&/()=?¿¡\'')) {
+					$("#validacion1").text("Contraseña válida.");
+				} else {
+					$("#validacion1").text("Contraseña no válida.");
+				};
+			});
+			$("#contrasena2").on("change keyup paste mouseup", function() {
+				if ($("#contrasena").val() == $("#contrasena2").val()) {
+					$("#validacion2").text("Las contraseñas coinciden. Contraseña válida.");
+				} else {
+					$("#validacion2").text("Las contraseñas no coinciden. Contraseña inválida.");
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>
