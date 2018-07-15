@@ -1,0 +1,35 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>iBuy-Ventas</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<h1 id="inicio">iBuy</h1>
+	<h2 style="font-size:100%;">Tu portal de compra-venta online</h2>
+	<h3>Ventas</h3>
+	<form>
+		<fieldset>
+			<legend>
+				Información del producto
+			</legend>
+			<label for="producto">Nombre:</label>
+			<input type="text" name="producto" id="producto"><br>
+			<label for="precio">Precio:</label>
+			<input type="number" name="precio" id="precio" min="1" max="1000"><br>
+			<label for="informacion">Información adicional:</label><br>
+			<textarea name="informacion" id="informacion" rows="7" cols="50">Haga una descripción del producto.</textarea><br>
+		</fieldset>
+		Tipo de venta:<br>
+		<input type="radio" name="tipo" value="venta" checked>Venta directa<br>
+		<input type="radio" name="tipo" value="subasta">Subasta<br>
+		<input type="checkbox" name="terminos" value="si">He leído los términos y condiciones<br>
+		<input type="submit" value="Poner producto a la venta">
+	</form>
+</body>
+
+</html>

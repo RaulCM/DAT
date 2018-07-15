@@ -1,0 +1,38 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>iBuy-Compras</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<h1 id="inicio">iBuy</h1>
+	<h2 style="font-size:100%;">Tu portal de compra-venta online</h2>
+	<h3>Compras</h3>
+	<form>
+		Producto a comprar:
+		<select name="producto">
+				<option value="movil">Teléfono móvil - 300€</option>
+				<option value="ordenador">Ordenador - 500€</option>
+				<option value="videoconsola">Videoconsola - 150€</option>
+			</select>
+		<fieldset>
+			<legend>
+				Datos de envío
+			</legend>
+			<label for="nombre">Nombre:</label>
+			<input type="text" name="nombre" id="nombre"><br>
+			<label for="apellidos">Apellidos:</label>
+			<input type="text" name="apellidos" id="apellidos"><br>
+			<label for="direccion">Dirección:</label>
+			<input type="text" name="direccion" id="direccion"><br>
+		</fieldset>
+		<input type="checkbox" name="terminos" value="si">He leído los términos y condiciones<br>
+		<input type="submit" value="Realizar pedido">
+	</form>
+</body>
+
+</html>

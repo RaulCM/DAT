@@ -1,0 +1,53 @@
+Raul Cano Montero
+login: rcano
+
+Práctica 1.3. W3C Validator
+
+Para reddit.com:
+
+Error: An img element must have an alt attribute, except under certain conditions.
+From line 1, column 214511; to line 1, column 214567
+<img id="hsts_pixel" src="//reddit.com/static/pixel.png">
+
+Se resolvería añadiendo el atributo alt para describir con texto el contenido de la imagen.
+
+========================================================================
+Para urjc.es
+
+Error: No space between attributes.
+At line 693, column 51
+rado/16-online"class="row-flex
+
+Se resolvería añadiendo un espacio antes de darle valor al atributo class.
+
+------------------------------------------------------------------------
+
+Error: Duplicate ID mod-finder-searchform.
+From line 1122, column 2; to line 1122, column 127
+<form action="/" method="get" id="mod-finder-searchform" class="form-search" style="text-align: center; padding-right: 10px;">
+From line 1124, column 27; to line 1124, column 169
+<input name="q" required="" placeholder="&nbsp Buscar..." size="10" type="text" id="mod-finder-searchword" class="search-query input-medium" />
+
+Se resolvería dando un valor distinto a alguno de los dos id.
+------------------------------------------------------------------------
+
+Error: Attribute alt not allowed on element li at this point.
+From line 1221, column 2; to line 1221, column 322
+<li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="300" data-link="https://…"back"data-delay="15000"  data-saveperformance="off"  alt="Mujer y ciencia" title="Mujer y ciencia">
+
+Se resolvería eliminando el atributo alt.
+
+------------------------------------------------------------------------
+Error: " in an unquoted attribute value. Probable causes: Attributes running together or a URL query string in an unquoted attribute value.
+At line 1306, column 145
+alt=audiencias"
+
+Se resolvería añadiendo unas comillas dobles después de =.
+
+========================================================================
+Para amazon.es
+
+Error: Bad value 200px for attribute height on element img: Expected a digit but saw p instead.
+At line 2087, column 1154 in resource https://www.amazon.es/
+
+Se resolvería poniendo únicamente 200 para indicar la altura de la imagen.
