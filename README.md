@@ -153,7 +153,7 @@ Revisa el código con el W3C validador y con bootlint, con los mismos criterios 
 
 ### Práctica 2.15. Landing Page
 
-Prepara una landing page con Bootstrap. Su nombre será ~/dat/practica02/landing.html y todos los ficheros que necesite estarán dentro de ~/dat/practica02/. Organiza los ficheros en subdirectorios como te parezca conveniente.\
+Prepara una landing page con Bootstrap. Su nombre será /practica02/landing.html y todos los ficheros que necesite estarán dentro de /practica02/. Organiza los ficheros en subdirectorios como te parezca conveniente.\
 Puede ser sobre un organismo o negocio real o inventado, una página en la que te ofrezcas como freelance o como empleado... cualquie cosa similar, tienes libertad.\
 La página tiene que ser razonablemente realista, puedes poner algún lorem ipsun en los párrafos pero la organización y los títulos tienen que tener sentido. Puedes reutilizar apartados anteriores de esta práctica.\
 Puedes inspirarte en alguna plantilla gratuita para Bootstrap. Encontrarás muchas en https://startbootstrap.com, aunque desde cualquier buscador podrás encontrar páginas similares usando las palabras clave free bootstrap templates o free bootstrap themes.\
@@ -161,3 +161,76 @@ Estas plantillas normalmente usan características de Bootstrap un poco más ava
 Te será útil algún stock de imágenes gratuitas. Por ejemplo https://www.pexels.com. aunque desde cualquier buscador podrás encontrar páginas similares usando las palabras clave free photo stock\
 PRACTICA OPTATIVA: Si lo deseas puedes usar como base alguna plantilla de las indicadas anteriormente. Ten en cuenta que tendrás que documentarte sobre aspectos de Bootstrap fuera del ámbito de la asignatura. Por otro lado, el código de estas plantillas es de calidad muy variable, algunas son fáciles de personalizar, otras no tanto.
 
+## Práctica 03
+### Práctica 3.2. Funciones básicas
+
+Escribe un fichero /practica03/js01.js que contenga:
+Una función que reciba una velocidad en metros/segundo y la devuelva en kilómetros/hora.\
+Una función que reciba una velocidad en metros/segundo y la devuelva en millas por hora. (Una milla son 1609.344 m)
+
+### Práctica 3.3. Funciones.
+
+Escribe en un fichero /practica03/js02.js un programa JavaScript que tenga una función que reciba dos parámetros:
+Una velocidad expresada en metros por segundo. Este parámetro podrá ser tanto un número como una cadena\
+Una cadena que podrá tomar los valores m/s, km/h o mph.\
+Los valores han de ser exactamente estos y no otros similares. No se admiten variaciones en mayúculas/minúsculas o espacios.
+
+La función devolverá\
+Una cadena con la velocidad de entrada, convertida a las unidades expresadas en el segundo argumento.\
+Si ha habido algún problema con los parámetros de entrada, la función devolverá una cadena que empezará por Error: (La primera letra en mayúscula), y que a continuación explicará la causa del error: que falten argumentos, que los argumentos sean incorrectos, etc.
+
+### Práctica 3.4. Validación de contraseña
+
+Escribe en un fichero /practica03/js03.js un programa JavaScript que tenga una función que indique si una contraseña tiene la fortaleza requerida\
+Recibirá los siguientes parámetros:
+La contraseña.\
+La longitud total que deberá tener la contraseña para que se considere válida.\
+El número mínimo de minúsculas exigidas. (Puede ser 0)\
+El número mínimo de mayúsculas. (Puede ser 0)\
+El número mínimo de números exigidos. (Puede ser 0)\
+El número mínimo de caracteres especiales exigido. (Puede ser 0)\
+Una cadena que contendrá todos los caracteres que serán considerados especiales. P.e. ,.-{}[]!"·$%&/()=?¿¡'
+
+Devolverá\
+El booleano true si la contraseña tiene la fortaleza exigida\
+El booleano false en otro caso
+
+Debe funcionar, al menos, con las letras inglesas y con las españolas (lo que incluye eñes y vocales con tilde)
+
+### Práctica 3.5. Calculadora
+
+Ahora programarás la lógica de negocio de una calculadora en JavaScript, similar al programa xcalc de Linux. (El interfaz de usuario en HTML lo desarrollarás más adelante, en la práctica 4). El fichero se llamará ~/dat/practica03/calculadora.js\
+La calculadora podrá sumar, restar, multiplicar o dividir. No aceptará decimales. Para saber cómo debe comportarse, observa xcalc. Ejemplo: la pantalla tiene un máximo de 11 caracteres, el valor inicial de la pantalla es 0, si se pulsan dos operadores seguidos solo se considera el último, etc. Observa que no es necesario un comportamiento más complejo, como el de gnome-calculator.\
+Constará de dos funciones principales (además de las funciones adicionales que te parezca conveniente)
+
+1. aceptaTecla(tecla, calculadora)
+    *El primer parámetro será una cadena, que deberá ser alguno de estos valores:
+        +Un número de 0 a 9
+        +La letra c, en minúscula o en mayúscula
+        +Los operadores + - * /
+        +El símbolo =
+        +Si es un valor distinto, será ignorado
+    *El segundo parámetro será un objeto que contendrá todas las variables necesarias para el funcionamiento de la calculadora.
+    *Devolverá: Una cadena con el valor de la pantalla
+
+2. pruebaCalculadora()
+Esta función la usarás para probar la función anterior ahora que todavía no tienes el interfaz de usuario. No tendrá parámetros de entrada ni valor de salida. Su contenido será similar a este:
+console.log(acepta_tecla( "1", calculadora))\
+console.log(acepta_tecla( "0", calculadora))\
+console.log(acepta_tecla( "+", calculadora))\
+console.log(acepta_tecla( "2", calculadora))\
+console.log(acepta_tecla( "=", calculadora))
+
+Si lo prefieres, puedes programar en inglés (así deberías hacer cualquier trabajo medianamente serio) y llamar a las funciones getKey(tecla, calc) y testCalc().\
+Implementa la calculadora como una máquina de estados\
+Empieza el diseño por el grafo. Guárdalo en el fichero /practica03/automata.jpg\
+Puedes hacerlo a mano y hacerle una foto con el móvil, con tal de que esté claro, sin tachones y sobre papel blanco, sin rayas ni cuadrículas.\
+Si quieres hacerlo mejor, con el ordenador, puedes usar la aplicación dia. El profesor se enseñará los fundamentos de su uso.\
+Usa una función javascript para cada estado
+
+### Práctica 3.6. Sleep
+
+Muchos lenguajes de programación tienen una función llamada sleep(x), que acepta un número de segundos y que detiene la ejecución del programa duante ese tiempo. O más bien, hace nada durante ese tiempo. El número puede tener decimales, pero si es negativo o no válido, la función mostrará un error en la consola.\
+JavaScript no tiene esta función. Prográmala, en el fichero. /practica03/sleep.js
+
+Sugerencia: usa un bucle.
