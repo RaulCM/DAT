@@ -1,0 +1,44 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<title> ej270 atributos de los bordes </title>
+	<style>
+		.clase1 {
+			width: 300px;
+			border: solid black;
+			color: red;
+		}
+
+		.clase2 {
+			border: solid red;
+		}
+
+		.clase3 {
+			padding-left: 50px;
+			padding-right: 50px;
+			margin-left: 30px;
+			margin-right: 30px;
+		}
+
+		.clase2.clase3 {
+			width: 500px;
+			height: 50px;
+			background-image: url("images/background.jpg");
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<p>Párrafo 1.</p>
+	<p class="clase1">Párrafo 2.</p>
+	<p class="clase2">Párrafo 3.</p>
+	<p class="clase3">Párrafo 4.</p>
+	<p class="clase2 clase3">Párrafo 5.</p>
+</body>
+
+</html>

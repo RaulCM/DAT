@@ -1,0 +1,47 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>iBuy-Ventas</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1 id="inicio">iBuy</h1>
+		<h2 style="font-size:100%;">Tu portal de compra-venta online</h2>
+		<h3>Ventas</h3>
+		<form>
+			<fieldset>
+				<legend>
+					Información del producto
+				</legend>
+				<div class="form-group">
+					<label for="producto">Nombre:</label>
+					<input type="text" name="producto" id="producto"><br>
+				</div>
+				<div class="form-group">
+					<label for="precio">Precio:</label>
+					<input type="number" name="precio" id="precio" min="1" max="1000"><br>
+				</div>
+				<div class="form-group">
+					<label for="informacion">Información adicional:</label><br>
+					<textarea name="informacion" id="informacion" rows="7" cols="50">Haga una descripción del producto.</textarea><br>
+				</div>
+			</fieldset>
+			Tipo de venta:<br>
+			<input type="radio" name="tipo" value="venta" checked>Venta directa<br>
+			<input type="radio" name="tipo" value="subasta">Subasta<br>
+			<input type="checkbox" name="terminos" value="si">He leído los términos y condiciones<br>
+			<input type="submit" value="Poner producto a la venta">
+		</form>
+	</div>
+</body>
+
+</html>

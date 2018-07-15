@@ -1,0 +1,50 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>iBuy-Compras</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1 id="inicio">iBuy</h1>
+		<h2 style="font-size:100%;">Tu portal de compra-venta online</h2>
+		<h3>Compras</h3>
+		<form>
+			Producto a comprar:
+			<select name="producto">
+					<option value="movil">Teléfono móvil - 300€</option>
+					<option value="ordenador">Ordenador - 500€</option>
+					<option value="videoconsola">Videoconsola - 150€</option>
+				</select>
+			<fieldset>
+				<legend>
+					Datos de envío
+				</legend>
+				<div class="form-group">
+					<label for="nombre">Nombre:</label>
+					<input type="text" name="nombre" id="nombre"><br>
+				</div>
+				<div class="form-group">
+					<label for="apellidos">Apellidos:</label>
+					<input type="text" name="apellidos" id="apellidos"><br>
+				</div>
+				<div class="form-group">
+					<label for="direccion">Dirección:</label>
+					<input type="text" name="direccion" id="direccion"><br>
+				</div>
+			</fieldset>
+			<input type="checkbox" name="terminos" value="si">He leído los términos y condiciones<br>
+			<input type="submit" value="Realizar pedido">
+		</form>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+Raul Cano Montero
+login: rcano
+
+Práctica 2.1. Análisis de selectores
+
+Ejemplo 1:
+
+La primera instrucción establecce el fondo de color beige para toda la página.
+La segunda instruccióne stablecce color azul, alineamiento a la izquierda y fondo amarillo para los <p>.
+La tercera instruccióne stablece color rojo y fondo rosa para las clases "feo".
+La cuarta instrucción establece color blanco y fondo negro para las clases "inverso".
+La quinta instrucción establece color violeta, alineamiento al centro y tamaño de fuente grande para los <h1>.
+
+El fondo se ve de color beige debido a que se establece ese color para *, que se aplica a todo el documento HTML.
+"Hola, css" se ve de color rosa, ya que es un h1, para los que se dice que tienen que ser de color violeta, estar centrados y tener un tamaño de fuente grande.
+El primer párrafo se ve de color azul, alineado a la izquierda y con fondo amarillo por ser sólo del tipo <p>
+El segundo párrafo, al ser de clase feo se ve de color rojo y fondo rosa.
+El tercero, al ser de clase inverso aparece con color blanco y fondo negro.
+
+----------------------------------------------------
+Ejemplo 2:
+
+La primera instrucción establece un color azul para los <p> que se encuentran dentro de <div>.
+La segunda instrucción establece un tamaño de fuente del 200% para elementos <p> directamente contenidos en <div>.
+La tercera instrucción establece un fondo amarillo para los <p> que se encuentran inmediatamente después de <p>.
+
+La primera línea, al ser sólo un elemento <p> no se ve afectada por normas de diseño.
+La segunda, al ser un <p> directamente contenido en un <div> se ve afectada por las dos primeras instrucciones, siendo azul y con un tamaño del 200%.
+La tercera línea es un elemento <h2> y no se ve afectada por nada.
+La cuarta línea es un <p> contenido en un <div>, pero no directamente, por lo que sólo se ve afectada por la primera instrucción y se ve azul.
+La quinta línea es un <p> directamente contenido en un <div> y ocurre lo mismo que con la segunda.
+La sexta línea es un <p> directamente contenido en un <div> y, a la vez, va después de otro <p>, por lo que se ve afectado por las tres instrucciones, siendo azul, de un tamaño del 200% y con el fondo amarillo.
+
+----------------------------------------------------
+Ejemplo 3:
+
+La primera instrucción establece un color rojo para las clases toledo contenidas dentro de clases españa.
+La segunda instrucción establece un color azul para las clases toledo.
+La tercera instrucción centra el texto para las clases toledo y cuenca.
+Y la cuarta instrucción subraya el texto para la clase castilla-la-mancha.
+
+La primera línea no se ve afectada al ser de las clases "pais" y "españa".
+La segunda línea al ser de clase "castilla-la-mancha", aparece subrayada.
+La tercera línea, al ser de clase "toledo" y estar contenida en una clase "españa", se ve de color rojo.
+La cuarta línea está subrayada por estar dentro de una clase "castilla-la-mancha" y alineado al centro por ser de clase "cuenca".
+La quinta línea está subrayada por estar dentro de una clase "castilla-la-mancha".
+La sexta línea no se ve afectada al ser de las clases "pais" y "estados-unidos".
+La séptima línea no se ve afectada por ser de la case "ohio".
+La octava linea se ve azul y alineada al centro por ser de la clase "toledo".
+
+=====================================================
+Práctica 2.2. Análisis de selectores
+
+Ejemplo 4:
+
+La primera instrucción establece un color azul para el id "alfa.
+La segunda instrucción establece un tamaño de fuente del 200% para los párrafos con id "alfa".
+La tercera instrucción establecce un fondo de color amarillo para los div con id "alfa".
+Y la cuarta instruccióne establece una fuente cursiva para los id "alfa" contenidos en un div.
+
+El único párrafo que se ve afectado es el segundo. Se ve azul porque su id es "alfa", su fuente está al 200% por ser un párrafo con id "alfa" y al estar contenido en un div y tener id "alfa" también se ve con fuente cursiva.
+
+=====================================================
+Práctica 2.3. Análisis de selectores
+
+Ejemplo 5:
+
+La primera instrucción establece un color de fuente para la clase "urjc".
+La segunda instrucción establece un subrayado para los elementos que sean a la vez de las clases "urjc" y "reglamento".
+La tercera instrucción establece un fondo azul para los elementos que sean de las clases "urjc" o "reglamento".
+
+El primer párrafo no se ve afectado por nada al no tener ninguna clase.
+El segundo párrafo es de las clases "reglamento" y "urjc", por lo que se ve afectado por las tres instrucciones.
+El tercer párrafo es de las clases "reglamento" y "ucm", por lo que sólo se ve afectado por la tercera instrucción y se ve con el fondo azul.
+El cuarto párrafo es de la clase "matriculación" y no se ve afectado por ninguna instrucción.
+El quinto párrafo es de las clases "investigación" y "urjc" y se ve afecado por la primera y tercera instrucción, viéndose de color rojo y con el fondo azul.
+El sexto párrafo es de las clases "investigación" y "uc3m", por lo que no se ve afectado por ninguna instrucción.
+
+=====================================================
+Práctica 2.4. Análisis de selectores
+
+Ejemplo 6:
+
+La primera intrucción establece un borde verde para los elementos <p> que tengan una clase.
+La segunda instrucción establece una fuente cursiva para los <p> que sean sólo de la clase "ventas".
+La tercera instrucción establece una fuente más grande para los <p> cuya clase contenga "ventas".
+
+El primer párrafo no tiene ninguna clase, por lo que no se ve afectado.
+El segundo párrafo es de la clase "compras", así que al tener una clase se ve afectado por la primera instrucción y tiene un recuadro verde.
+El tercer párrafo es de la clase "ventas", por lo que se ve afectado por las tres instrucciones y su fuente es cursiva, más grande y tiene un recuadro.
+El cuarto párrafo es de las clases "ventas" y "promociones", por lo que se ve afectado por la tercera instrucción, además de la primera, y su fuente es más grande y tiene un recuadro.
+
+=====================================================
+Práctica 2.5. Uso de selectores
+
+1.
+La primera instrucción establece el color rojo para los <p> contenidos en un <div>.
+La segunda instrucción establece una fuente XL para los <p> directamente contenidos en un <div>.
+La tercera instrucción establece el color azul para los <p> que vayan después de <div>.
+
+El párrafo 1 se ve afectado por las dos instrucciones al ser un <p> directamente contenido en un <div>.
+El párrafo 2 se ve afectado sólo por la primera instrucción, ya que es un <p> contenido en un <div>, pero no directamente.
+El párrafo 3 se ve afectado por la tercera instrucción ya que es un <p> situado después de un <div>.
+El párrafo 4 no se ve afectado por ninguna instrucción ya que es un <p> que no está contenido en un <div> ni a continuación de un <div>.
+
+----------------------------------------------------
+2.
+La primera instrucción establece un tamaño de fuente del 200% para los <div> y los elementos con id "alfa".
+La segunda instrucción establece un color azul para los elementos con id "alfa".
+La tercera instrucción establece un color rojo para los <p> con id "beta.
+La cuarta isntrucción establece un fondo de color rosa para los elementos con id "gamma" que estén contenidos en un <div>.
+
+El párrafo 1 se ve afectado por la primera instrucción al estar dentro de un <div>.
+El párrafo 2 se ve afectado por las instrucciones 1 y 2 al tener id "alfa".
+El párrafo 3 se ve afectado por la tercera instrucción al ser un <p> con id "beta".
+El párrafo 4 no se ve afectado por ninguna instrucción.
+
+Al no haber ningún elemento con id "gamma" contenido en un <div>, la cuarta instrucción no afecta a ningún elemento.
+
+----------------------------------------------------
+3.
+La primera instrucción establece un fondo de color rojo para los elementos que sean a la vez de las clases "clase1" y "clase2".
+La segunda instrucción establece una fuente XL para los elementos <p> que estén directamente contenidos en un <div>.
+La tercera instrucción establece un color azul para los elementos <p> que vayan a continuación de un elemento <div>.
+
+El párrafo 1 no se ve afectado por ninguna de las instrucciones al ser un <p> que no está contenido ni a continuación de un <div> y sólo tiene como clase "clase1".
+El párrafo 2 se ve afectado por la segunda instrucción al ser un <p> directamente contenido en un <div>.
+El párrafo 3 se ve afectado por la segunda instrucción al ser un <p> directamente contenido en un <div> y además por la primera instrucción al tener las clases "clase1" y "clase2".
+El párrafo 4 se ve afetado por la tercera instrucción al ser un <p> que va a continuación de un <div>.
+
+----------------------------------------------------
+4.
+La primera instrucción establece un fondo de color rojo para todos los elementos que tengan un atributo "class".
+La segunda instrucción establece una fuente cursiva para los elementos cuya clase sera igual a "clase1".
+La tercera instrucción establece una fuente de tamaño XL para los elementos cuya clase contenga "clase1".
+
+El párrafo 1 no se ve afectado por ninguna instrucción al no tener ninguna clase.
+El párrafo 2 se ve afectado por las instrucciones 1 y 2 al tener una clase y ser esta igual a "clase1".
+El párrafo 3 sólo se ve afectado por la primera instrucción al tener una clase definida.
+El párrafo 4 se ve afectado por las instrucciones 1 y 3 al tener una clase y esta contener "clase1".
+
+=====================================================
+

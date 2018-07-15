@@ -1,0 +1,33 @@
+<!--Raul Cano Montero
+login: rcano-->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<title> ej253 selectores de concatenación de clases, adyacente e hijo directo </title>
+	<style>
+		.clase1.clase2 {
+			background-color: red;
+		}
+
+		div>p {
+			font-size: x-large;
+		}
+
+		div+p {
+			color: blue;
+		}
+	</style>
+</head>
+
+<body>
+	<p class="clase1">Párrafo 1.</p>
+	<div>
+		<p class="clase1">Párrafo 2.</p>
+		<p class="clase1 clase2">Párrafo 3.</p>
+	</div>
+	<p class="clase2">Párrafo 4.</p>
+</body>
+
+</html>
